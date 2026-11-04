@@ -1,0 +1,17 @@
+import { ArrowRight, Calculator, ClipboardList, FileCheck2, HeartHandshake, LockKeyhole, ShieldAlert } from 'lucide-react';
+const steps = [
+  { id: '01', Icon: ClipboardList, name: 'Conte sobre sua família', description: 'Informe quantas pessoas vivem na casa, renda mensal somada, dependentes e situação do CadÚnico.' },
+  { id: '02', Icon: Calculator, name: 'Entenda o cálculo', description: 'Comparamos a renda por pessoa aos limites públicos e identificamos pontos que merecem revisão.' },
+  { id: '03', Icon: FileCheck2, name: 'Receba orientações claras', description: 'Veja um resumo gratuito e, se desejar, acesse um roteiro detalhado com sugestões e fontes.' },
+];
+export default function Methodology() {
+  return (
+    <>
+      <section className="mx-auto max-w-7xl px-5 py-24 sm:px-8" id="como-funciona">
+        <div className="mx-auto max-w-2xl text-center"><p className="eyebrow">Um processo simples e explicável</p><h2 className="section-title mt-4">Informação clara para decisões mais seguras.</h2><p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">Uma orientação responsável começa com os dados reais da família, não com promessas ou fórmulas secretas.</p></div>
+        <div className="mt-14 grid gap-5 md:grid-cols-3">{steps.map(({ id, Icon, name, description }, index) => <div key={id} className="panel relative p-7 sm:p-8"><div className="flex items-start justify-between"><span className="flex h-13 w-13 items-center justify-center rounded-2xl bg-blue-50 p-3 text-brand-800"><Icon size={26}/></span><span className="text-4xl font-black text-slate-100">{id}</span></div><h3 className="mt-7 text-lg font-extrabold text-slate-900">{name}</h3><p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>{index < 2 && <ArrowRight size={18} className="absolute -right-3 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-1 text-slate-500 shadow-md md:block" />}</div>)}</div>
+      </section>
+      <section className="bg-white py-20"><div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:items-center"><div><p className="eyebrow">Por que vale conferir</p><h2 className="section-title mt-4">Seu cadastro deve refletir a realidade da família.</h2><p className="mt-6 text-base leading-8 text-slate-600">Mudanças de renda, endereço e integrantes podem exigir uma atualização do Cadastro Único. O primeiro passo é saber o que conferir e onde buscar atendimento oficial.</p><div className="mt-7 flex items-start gap-3 rounded-xl border border-amber-100 bg-amber-50 p-4 text-sm leading-6 text-amber-900"><ShieldAlert size={21} className="mt-0.5 shrink-0"/><span>Esta ferramenta não altera seu CadÚnico, não consulta dados do governo e não garante qualquer benefício.</span></div></div><div className="grid gap-4 sm:grid-cols-2"><div className="rounded-2xl border border-blue-100 bg-blue-50/55 p-6"><HeartHandshake size={27} className="text-brand-800"/><h3 className="mt-6 text-base font-extrabold text-slate-800">Orientação respeitosa</h3><p className="mt-2 text-sm leading-6 text-slate-600">Próximos passos adequados às respostas, sem criar urgência artificial.</p></div><div className="rounded-2xl border border-teal-100 bg-teal-50/60 p-6"><LockKeyhole size={27} className="text-accent-700"/><h3 className="mt-6 text-base font-extrabold text-slate-800">Privacidade por padrão</h3><p className="mt-2 text-sm leading-6 text-slate-600">Respostas mantidas apenas na memória desta página de demonstração.</p></div></div></div></section>
+    </>
+  );
+}
